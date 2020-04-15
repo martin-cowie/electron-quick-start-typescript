@@ -3,6 +3,15 @@
   <head>
     <meta charset="UTF-8">
     <title>Hello World!</title>
+    <style>
+        #directory-table {
+            width: 100%
+        }
+
+        #directory-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
   </head>
   <body>
     <h1>Hello World!</h1>
@@ -10,7 +19,19 @@
     Chromium <span id="chrome-version"></span>,
     and Electron <span id="electron-version"></span>.
 
+    <table id="directory-table">
+        <thead><!-- Header inserted here --></thead>
+        <tbody><!-- File listing inserted here --></tbody>
+        <tfoot>
+            <tr>
+                <th colspan="2">A list of the files in this directory</th>
+            </tr>
+        </tfoot>
+    </table>
+
     <!-- You can also require other files to run in this process -->
-    <script src="./dist/renderer.js"></script>
+    <script>
+        require('./dist/renderer.js')
+    </script>
   </body>
 </html>
